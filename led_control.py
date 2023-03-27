@@ -39,7 +39,7 @@ def theaterChase(strip, color, wait_ms=50, iterations=10):
             for i in range(0, strip.numPixels(), 3):
                 strip.setPixelColor(i+q, 0)
 
-def startup(location):
+def led_startup(location):
     if __name__ == '__main__':
         # Process arguments
         parser = argparse.ArgumentParser()
