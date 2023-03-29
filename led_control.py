@@ -14,12 +14,15 @@ def led_initialize(location):
     if location == "internal":
         LED_COUNT = 11
         LED_PIN = 17
+        print("Internal LED Initialized")
     if location == "right_eye" or "left_eye":
         LED_COUNT = 5
     if location == "right_eye":
         LED_PIN = 27
+        print("Right Eye LED Initialized")
     if location == "left_eye":
         LED_PIN = 22
+        print("Left Eye LED Initialized")
 
 def colorWipe(strip, color, wait_ms=50):
     """Wipe color across display a pixel at a time."""
