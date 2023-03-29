@@ -1,6 +1,9 @@
 import time
 from rpi_ws281x import *
 import argparse
+import board
+import neopixel
+pixels = neopixel.NeoPixel(board.D17, 11)
 
 def led_initialize(location):
     #LED strip configuration
@@ -10,7 +13,7 @@ def led_initialize(location):
     LED_DMA = 10
     LED_BRIGHTNESS = 100
     LED_INVERT = False
-    LED_CHannel = 0
+    LED_CHANNEL = 0
     if location == "internal":
         LED_COUNT = 11
         LED_PIN = 17
@@ -44,26 +47,27 @@ def theaterChase(strip, color, wait_ms=50, iterations=10):
 
 def led_startup(location):
     if __name__ == '__main__':
-        # Process arguments
-        parser = argparse.ArgumentParser()
-        parser.add_argument('-c', '--clear', action='store_true', help='clear the display on exit')
-        args = parser.parse_args()
-
-        # Create NeoPixel object with appropriate configuration.
-        strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
-        # Intialize the library (must be called once before other functions).
-        strip.begin()
-
-        print ('Press Ctrl-C to quit.')
-        if not args.clear:
-            print('Use "-c" argument to clear LEDs on exit')
-
-        try:
-
-            while True:
-                theaterChase(strip, Color(  0,   0, 255))  # Green theater chase
-                colorWipe(strip, Color(0, 0, 255))  # Green wipe
-                
-        except KeyboardInterrupt:
-            if args.clear:
-                colorWipe(strip, Color(0,0,0), 10)
+        pixels.fill((0,255,0))
+#        # Process arguments
+#        parser = argparse.ArgumentParser()
+#        parser.add_argument('-c', '--clear', action='store_true', help='clear the display on exit')
+#        args = parser.parse_args()
+#
+#        # Create NeoPixel object with appropriate configuration.
+#        strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
+#        # Intialize the library (must be called once before other functions).
+#        strip.begin()
+#
+#        print ('Press Ctrl-C to quit.')
+#        if not args.clear:
+#            print('Use "-c" argument to clear LEDs on exit')
+#
+#        try:
+#
+ #           while True:
+ #               theaterChase(strip, Color(  0,   0, 255))  # Green theater chase
+ #               colorWipe(strip, Color(0, 0, 255))  # Green wipe
+ #               
+ #       except KeyboardInterrupt:
+ #           if args.clear:
+ #               colorWipe(strip, Color(0,0,0), 10)
