@@ -58,8 +58,8 @@ def led_startup(location):
         try:
 
             while True:
-            theaterChase(strip, Color(  0,   0, 255))  # Green theater chase
-            colorWipe(strip, Color(0, 0, 255))  # Green wipe
+                theaterChase(strip, Color(  0,   0, 255))  # Green theater chase
+                colorWipe(strip, Color(0, 0, 255))  # Green wipe
                 
         except KeyboardInterrupt:
             if args.clear:
