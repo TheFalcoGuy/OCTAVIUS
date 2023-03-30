@@ -7,6 +7,7 @@ import threading
 
 def motor_cmd():
     board_0_driver.pos_move([0,50])
+    board_1_driver.pos_move([0,-50])
 
 if __name__ == "__main__":
 
