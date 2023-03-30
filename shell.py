@@ -16,8 +16,9 @@ if __name__ == "__main__":
     # 20563882304E
     # 2071388D304E
     # 208637853548
-    board_0_driver = Odrive(usb_serial = '20563882304E', axes = [False, True], kp = [0, 10], kd = [0, 0.001], full_init = False)
-    #board_1_driver = Odrive(usb_serial = '2083388E304E', axes = [True, True], kp = [10, 10], kd = [0.001, 0.001], full_init = False)
+    board_0_driver = Odrive(usb_serial = '20563882304E', axes = [True, True], kp = [0.001, 10], kd = [0.001, 0.001], full_init = False)
+    board_1_driver = Odrive(usb_serial = '2071388D304E', axes = [True, True], kp = [10, 10], kd = [0.001, 0.001], full_init = False)
+    board_2_driver = Odrive(usb_serial = '208637853548', axes = [True, True], kp = [10, 10], kd = [0.001, 0.001], full_init = False)
 
     #Assign ODrives wrt motor map
     #Note: M0 -> Right, M1 -> Left
