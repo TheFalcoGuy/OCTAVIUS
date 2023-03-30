@@ -167,8 +167,9 @@ class Odrive:
             self.odrv.axis0.encoder.config.cpr = 4000
             self.odrv.axis0.encoder.config.use_index = True
             self.odrv.axis0.encoder.config.pre_calibrated = False
+            self.odrv.axis0.motor.config.current_lim = 12
             #motor calibration current
-            self.odrv.axis0.motor.config.calibration_current = 4
+            self.odrv.axis0.motor.config.calibration_current = 8
 
             time.sleep(1)
             self.printErrorStates()
@@ -190,8 +191,9 @@ class Odrive:
             self.odrv.axis1.encoder.config.cpr = 4000
             self.odrv.axis1.encoder.config.use_index = True
             self.odrv.axis1.encoder.config.pre_calibrated = False
+            self.odrv.axis1.motor.config.current_lim = 12
             #motor calibration current
-            self.odrv.axis1.motor.config.calibration_current = 4
+            self.odrv.axis1.motor.config.calibration_current = 8
 
             time.sleep(1)
             self.printErrorStates()
