@@ -1,6 +1,7 @@
 #Shell script to run OCTAVIUS platform
 
-from led_control import interior eyes
+from led_control import interior
+from led_control import eyes
 
 #import odrive
 import threading
