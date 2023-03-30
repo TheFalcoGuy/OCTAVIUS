@@ -7,6 +7,7 @@ Num_Int = 12
 Num_Eye = 6
 
 def interior():
+    pixels_int = neopixel.NeoPixel(board.D12, Num_Int, auto_write=False)
     while True:
         for k in range(0,10,1):
             pixels_int = neopixel.NeoPixel(board.D12, Num_Int, auto_write=False, brightness=0.1*k)
