@@ -34,8 +34,8 @@ def eyes():
             time.sleep(0.1)
 
 if __name__ =="__main__":
-    int_light = threading.Thread(target=interior,args=None)
-    eye_light = threading.Thread(target=eyes,args=None)
+    int_light = threading.Thread(target=interior)
+    eye_light = threading.Thread(target=eyes)
 
     int_light.start()
     eye_light.start()
