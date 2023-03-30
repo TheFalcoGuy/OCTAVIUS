@@ -7,7 +7,7 @@ from led_control import eyes
 import threading
 #from odrive.enums import *
 
-if __name__ = "__main__":
+if __name__ == "__main__":
 
     #Initialize LED arrays
     interior()
