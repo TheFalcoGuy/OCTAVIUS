@@ -6,11 +6,11 @@ from OdrivePythonController_Superlimb import Odrive
 import threading
 
 def motor_cmd():
-    board_0_driver.pos_move([0,-50])
+    board_0_driver.pos_move([0,-100])
     print('Complete Motion 1')
     board_0_driver.pos_move([0,0])
     print('Complete Motion 2')
-    board_0_driver.pos_move([0,50])
+    board_0_driver.pos_move([0,100])
     print('Complete Motion 3')
 
 if __name__ == "__main__":
