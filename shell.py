@@ -7,8 +7,11 @@ import threading
 
 def motor_cmd():
     board_2_driver.pos_move([0,-50])
+    print('Complete Motion 1')
     board_2_driver.pos_move([0,0])
+    print('Complete Motion 2')
     board_2_driver.pos_move([0,50])
+    print('Complete Motion 3')
 
 if __name__ == "__main__":
 
