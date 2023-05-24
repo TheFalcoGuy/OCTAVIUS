@@ -6,8 +6,8 @@ from OdrivePythonController_Superlimb import Odrive
 import threading
 
 def motor_cmd():
-    board_1_driver.pos_move([0,0])
-    board_1_driver.pos_move([0,50])
+    board_0_driver.pos_move([0,0])
+    board_0_driver.pos_move([0,10])
 
 if __name__ == "__main__":
 
@@ -18,8 +18,8 @@ if __name__ == "__main__":
     #Initialize ODrives
     #Odrive S/Ns as follows:
     # 20563882304E JOINT 0
-    # 2071388D304E JOINT 1
-    # 208637853548 JOINT 2
+    # 2071388D304E JOINT 2
+    # 208637853548 JOINT 1
     board_0_driver = Odrive(usb_serial = '20563882304E', axes = [True, True], kp = [10, 10], kd = [0.001, 0.001], full_init = False)
     board_1_driver = Odrive(usb_serial = '2071388D304E', axes = [True, True], kp = [10, 10], kd = [0.001, 0.001], full_init = False)
     board_2_driver = Odrive(usb_serial = '208637853548', axes = [True, True], kp = [10, 10], kd = [0.001, 0.001], full_init = False)
